@@ -3,12 +3,13 @@ import pickle
 import face_recognition
 import numpy as np
 from flask import Flask, request, jsonify
+from asgiref.wsgi import WsgiToAsgi
 
 with open("model.pkl", "rb") as file:
     encodings = pickle.load(file)
 
 app = Flask(__name__)
-
+asgi_app = WsgiToAsgi(app)
 
 @app.route("/recognize", methods=["POST"])
 def recognize():

@@ -45,12 +45,13 @@ def recognize():
     face_encodings = face_recognition.face_encodings(image)
     logger.info("encodings calculated")
 
-    face_locations = face_recognition.face_locations(image)
-    logger.info("face locations calculated")
+    # face_locations = face_recognition.face_locations(image)
+    # logger.info("face locations calculated")
 
     for i in range(0, len(face_encodings)):
         percentage = np.mean(face_recognition.compare_faces(encodings, face_encodings[i]))
-        result.append((percentage, face_locations[i]))
+        # result.append((percentage, face_locations[i]))
+        result.append((percentage))
     logger.info("encoding distance calculated")
 
     return jsonify(result)

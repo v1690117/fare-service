@@ -1,0 +1,10 @@
+# @no-log
+POST http://localhost:8080/recognize
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="picture.jpg"
+Content-Type: application/json
+
+< ./data/tests/many.jpg
+--WebAppBoundary--

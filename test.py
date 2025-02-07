@@ -1,11 +1,12 @@
 import os
+import pickle
 
 import face_recognition
 import numpy as np
-import pickle
 
 with open("model.pkl", "rb") as file:
     encodings = pickle.load(file)
+
 
 def matches(img):
     fn = face_recognition.load_image_file(img)

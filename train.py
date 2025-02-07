@@ -21,7 +21,6 @@ for file in files:
     except Exception as e:
         print(f"error on processing {file}: {e}")
 
-print("-----------------------------------")
 print(f"total calculated: {len(encodings)}")
 print()
 
